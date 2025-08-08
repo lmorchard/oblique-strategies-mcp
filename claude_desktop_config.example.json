@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "oblique-strategies": {
+      "command": "uv",
+      "args": ["run", "python", "/Users/yourusername/oblique-strategies-mcp/main.py"],
+      "env": {}
+    }
+  }
+}

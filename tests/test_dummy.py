@@ -15,6 +15,10 @@ def test_string_operations():
 
 def test_list_operations():
     """Test basic list operations."""
-    strategies = ["Use an old idea", "What would your closest friend do?", "Honor thy error as a hidden intention"]
+    strategies = [
+        "Use an old idea",
+        "What would your closest friend do?",
+        "Honor thy error as a hidden intention",
+    ]
     assert len(strategies) == 3
     assert strategies[0] == "Use an old idea"
