@@ -39,16 +39,21 @@ When building this MCP server, follow these patterns:
 ### Server Structure
 - Implement the MCP protocol handlers for tools, resources, and prompts
 - Provide tools for:
-  - `get_strategy` - Get a random oblique strategy
-  - `get_strategy_by_category` - Get strategies filtered by creative domain
-  - `search_strategies` - Search strategies by keywords
+  - `get_strategy` - Get a random oblique strategy from a selected edition (defaults to edition 2)
+  - `search_strategies` - Search strategies by keywords across editions
 - Resources should include the full collection of oblique strategies
 - Prompts could provide creative workflow templates
 
 ### Strategy Data Management
-- Store strategies in a structured format (JSON/YAML)
-- Include metadata like categories, contexts, and usage guidance
-- Consider providing both original strategies and modern interpretations
+- Strategy files are stored in `strategies/` directory, one strategy per line
+- Available editions and variants:
+  - `oblique-strategies-edition-1.txt` - First edition (112 strategies)
+  - `oblique-strategies-edition-2.txt` - Second edition (127 strategies) **[DEFAULT]**
+  - `oblique-strategies-edition-3.txt` - Third edition (121 strategies)
+  - `oblique-strategies-edition-4.txt` - Fourth edition (100 strategies)
+  - `oblique-strategies-condensed.txt` - Condensed collection (195 strategies)
+  - `prompts-for-programmers.txt` - Programming-specific adaptation (96 prompts)
+  - `do-it-abridged.txt` - Abridged "Do It" collection (32 strategies)
 
 ### Integration Patterns
 - Follow MCP server specifications for Claude integration
@@ -71,10 +76,12 @@ The most frequently used commands will be:
 
 ## Project Structure
 
-Expected Python package structure:
-- `src/oblique_strategies_mcp/` - Main package directory
-- `src/oblique_strategies_mcp/__main__.py` - Entry point for `uv run oblique-strategies-mcp`
-- `src/oblique_strategies_mcp/server.py` - MCP server implementation
-- `src/oblique_strategies_mcp/strategies.py` - Strategy data and logic
+Current project structure:
+- `main.py` - Entry point and MCP server implementation
+- `strategies/` - Directory containing strategy text files
+  - Each file contains one strategy per line
+  - Default edition is `oblique-strategies-edition-2.txt`
 - `tests/` - Test files
 - `pyproject.toml` - Project configuration and dependencies
+- `CLAUDE.md` - This file
+- `README.md` - User-facing documentation
