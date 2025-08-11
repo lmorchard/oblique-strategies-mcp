@@ -2,6 +2,46 @@
 
 An MCP (Model Context Protocol) server that provides access to Brian Eno and Peter Schmidt's Oblique Strategies - a collection of prompts designed to help overcome creative blocks through lateral thinking.
 
+## Why?
+
+Why not?
+
+## No, seriously, why?
+
+Because I've built Oblique Strategies thingies for various devices & platforms and I wanted to make another one to play with the MCP protocol.
+
+This is a very silly project and you should just go buy a real deck of cards.
+
+## Quick Start
+
+No installation required, if you have `uvx` and you trust my code from github. (Weirdo.)
+
+Run directly from GitHub using uvx:
+```bash
+uvx --from git+https://github.com/lmorchard/oblique-strategies-mcp oblique-strategies-mcp
+```
+
+For Claude Desktop, add to your config file:
+```json
+{
+  "mcpServers": {
+    "oblique-strategies": {
+      "command": "/path/to/uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/lmorchard/oblique-strategies-mcp",
+        "oblique-strategies-mcp"
+      ]
+    }
+  }
+}
+```
+
+For Claude Code:
+```bash
+claude mcp add oblique-strategies -- /path/to/uvx --from git+https://github.com/lmorchard/oblique-strategies-mcp oblique-strategies-mcp
+```
+
 ## Features
 
 - Get random strategies from multiple editions (1975-1982)
