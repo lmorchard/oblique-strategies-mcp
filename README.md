@@ -49,6 +49,19 @@ claude mcp add oblique-strategies -- /path/to/uvx --from git+https://github.com/
 - Choose from 7 different collections including programming-specific adaptations
 - Default: Edition 2 (1978) with 128 strategies
 
+## MCP Tools
+
+- **`get_strategy`** - Get a random strategy (optionally specify edition)
+- **`search_strategies`** - Search strategies by keyword
+- **`list_editions`** - List all available editions
+
+## Available Collections
+
+- **Edition 1-4**: Original Oblique Strategies (1975-1982)
+- **Condensed**: Comprehensive collection (195 strategies)
+- **Programmers**: Programming-specific adaptations (96 prompts)
+- **Do It**: Action-oriented prompts (32 strategies)
+
 ## Installation
 
 ### For Development
@@ -60,20 +73,6 @@ cd oblique-strategies-mcp
 
 # Install dependencies with uv
 uv sync
-```
-
-### Global Installation
-
-Install globally using uv tool for access from anywhere:
-
-```bash
-uv tool install git+https://github.com/<username>/oblique-strategies-mcp.git
-```
-
-Or install from a local clone:
-
-```bash
-uv tool install /path/to/oblique-strategies-mcp
 ```
 
 ## Running the Server
@@ -154,19 +153,6 @@ claude mcp add oblique-strategies oblique-strategies-mcp
 ```
 
 After adding, restart Claude Desktop or reconnect in Claude Code.
-
-## MCP Tools
-
-- **`get_strategy`** - Get a random strategy (optionally specify edition)
-- **`search_strategies`** - Search strategies by keyword
-- **`list_editions`** - List all available editions
-
-## Available Collections
-
-- **Edition 1-4**: Original Oblique Strategies (1975-1982)
-- **Condensed**: Comprehensive collection (195 strategies)
-- **Programmers**: Programming-specific adaptations (96 prompts)
-- **Do It**: Action-oriented prompts (32 strategies)
 
 ## License
 
