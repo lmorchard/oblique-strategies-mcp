@@ -157,10 +157,13 @@ def list_editions() -> Dict[str, Any]:
 
 def main():
     """Main entry point for the MCP server."""
-    from mcp.server.stdio import stdio_server
-
-    # Run the server using stdio transport
-    stdio_server(mcp)
+    import sys
+    
+    # Print server info to stderr
+    print("Starting Oblique Strategies MCP server...", file=sys.stderr)
+    
+    # Run the FastMCP server using stdio transport
+    mcp.run()
 
 
 # Entry point for running the server

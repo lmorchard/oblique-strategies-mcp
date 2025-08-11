@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-oblique-strategies-mcp = "main:main"
+oblique-strategies-mcp = "oblique_strategies_mcp.__main__:main"
 
 [dependency-groups]
 dev = [
@@ -19,3 +19,13 @@ dev = [
     "pytest-cov>=6.2.1",
     "ruff>=0.12.8",
 ]
+
+[tool.uv]
+package = true
+
+[tool.setuptools]
+packages = ["oblique_strategies_mcp"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["strategies/*.txt"]

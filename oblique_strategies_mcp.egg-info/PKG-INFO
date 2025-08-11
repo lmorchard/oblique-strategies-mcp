@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: oblique-strategies-mcp
+Version: 0.1.0
+Summary: MCP server for Brian Eno's Oblique Strategies
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: mcp>=1.12.4
+Requires-Dist: pydantic>=2.11.7
+
+# Oblique Strategies MCP Server
+
+An MCP (Model Context Protocol) server that provides access to Brian Eno and Peter Schmidt's Oblique Strategies - a collection of prompts designed to help overcome creative blocks through lateral thinking.
+
+## Features
+
+- Get random strategies from multiple editions (1975-1982)
+- Search strategies by keyword
+- Choose from 7 different collections including programming-specific adaptations
+- Default: Edition 2 (1978) with 128 strategies
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd oblique-strategies-mcp
+
+# Install dependencies with uv
+uv sync
+```
+
+## Configuration
+
+Add to your Claude Desktop config file (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+
+```json
+{
+  "mcpServers": {
+    "oblique-strategies": {
+      "command": "uv",
+      "args": ["run", "python", "/path/to/oblique-strategies-mcp/main.py"],
+      "env": {}
+    }
+  }
+}
+```
+
+Replace `/path/to/oblique-strategies-mcp` with the actual path to this repository, then restart Claude Desktop.
+
+## MCP Tools
+
+- **`get_strategy`** - Get a random strategy (optionally specify edition)
+- **`search_strategies`** - Search strategies by keyword
+- **`list_editions`** - List all available editions
+
+## Available Collections
+
+- **Edition 1-4**: Original Oblique Strategies (1975-1982)
+- **Condensed**: Comprehensive collection (195 strategies)
+- **Programmers**: Programming-specific adaptations (96 prompts)
+- **Do It**: Action-oriented prompts (32 strategies)
+
+## License
+
+MIT
+
+## Acknowledgments
+
+- Brian Eno and Peter Schmidt for creating Oblique Strategies
+- Strategy collections sourced from: https://github.com/zzkt/oblique-strategies

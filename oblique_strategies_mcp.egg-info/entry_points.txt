@@ -1,0 +1,2 @@
+[console_scripts]
+oblique-strategies-mcp = oblique_strategies_mcp.__main__:main
