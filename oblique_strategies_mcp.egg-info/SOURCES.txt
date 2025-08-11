@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 oblique_strategies_mcp/__init__.py
 oblique_strategies_mcp/__main__.py
+oblique_strategies_mcp/strategies_core.py
 oblique_strategies_mcp.egg-info/PKG-INFO
 oblique_strategies_mcp.egg-info/SOURCES.txt
 oblique_strategies_mcp.egg-info/dependency_links.txt
@@ -15,4 +16,4 @@ oblique_strategies_mcp/strategies/oblique-strategies-edition-2.txt
 oblique_strategies_mcp/strategies/oblique-strategies-edition-3.txt
 oblique_strategies_mcp/strategies/oblique-strategies-edition-4.txt
 oblique_strategies_mcp/strategies/prompts-for-programmers.txt
-tests/test_dummy.py
+tests/test_strategies_core.py

@@ -20,6 +20,8 @@ An MCP (Model Context Protocol) server that provides access to Brian Eno and Pet
 
 ## Installation
 
+### For Development
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -29,23 +31,98 @@ cd oblique-strategies-mcp
 uv sync
 ```
 
+### Global Installation
+
+Install globally using uv tool for access from anywhere:
+
+```bash
+uv tool install git+https://github.com/<username>/oblique-strategies-mcp.git
+```
+
+Or install from a local clone:
+
+```bash
+uv tool install /path/to/oblique-strategies-mcp
+```
+
+## Running the Server
+
+### Development Mode
+
+From the project directory:
+```bash
+# Using the package entry point
+uv run oblique-strategies-mcp
+
+# Or using Python module syntax
+uv run python -m oblique_strategies_mcp
+
+# Or using the wrapper script
+./run-server.sh
+```
+
+### After Global Installation
+
+```bash
+oblique-strategies-mcp
+```
+
 ## Configuration
+
+### For Claude Desktop
 
 Add to your Claude Desktop config file (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
+#### Development Setup
 ```json
 {
   "mcpServers": {
     "oblique-strategies": {
-      "command": "uv",
-      "args": ["run", "python", "/path/to/oblique-strategies-mcp/main.py"],
+      "command": "/path/to/uv",
+      "args": [
+        "--directory",
+        "/path/to/oblique-strategies-mcp",
+        "run",
+        "oblique-strategies-mcp"
+      ]
+    }
+  }
+}
+```
+
+Note: Replace `/path/to/uv` with the full path to your uv executable (typically `~/.local/bin/uv` or use `which uv` to find it).
+
+#### Global Installation Setup
+```json
+{
+  "mcpServers": {
+    "oblique-strategies": {
+      "command": "oblique-strategies-mcp",
+      "args": [],
       "env": {}
     }
   }
 }
 ```
 
-Replace `/path/to/oblique-strategies-mcp` with the actual path to this repository, then restart Claude Desktop.
+### For Claude Code
+
+#### Development Setup
+```bash
+claude mcp add oblique-strategies -- uv --directory /path/to/oblique-strategies-mcp run oblique-strategies-mcp
+```
+
+#### Using Wrapper Script
+```bash
+claude mcp add oblique-strategies /path/to/oblique-strategies-mcp/run-server.sh
+```
+
+#### Global Installation
+```bash
+claude mcp add oblique-strategies oblique-strategies-mcp
+```
+
+After adding, restart Claude Desktop or reconnect in Claude Code.
 
 ## MCP Tools
 

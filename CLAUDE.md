@@ -79,11 +79,14 @@ The most frequently used commands will be:
 Current project structure:
 - `oblique_strategies_mcp/` - Package directory
   - `__init__.py` - Package initialization
-  - `__main__.py` - Entry point and MCP server implementation
-- `strategies/` - Directory containing strategy text files
-  - Each file contains one strategy per line
-  - Default edition is `oblique-strategies-edition-2.txt`
+  - `__main__.py` - MCP server entry point (thin wrapper)
+  - `strategies_core.py` - Core business logic (testable, framework-agnostic)
+  - `strategies/` - Directory containing strategy text files
+    - Each file contains one strategy per line
+    - Default edition is `oblique-strategies-edition-2.txt`
 - `tests/` - Test files
+  - `test_strategies_core.py` - Tests for core business logic
 - `pyproject.toml` - Project configuration and dependencies
+- `run-server.sh` - Convenience script for running the server
 - `CLAUDE.md` - This file
 - `README.md` - User-facing documentation
