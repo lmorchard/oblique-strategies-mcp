@@ -7,11 +7,11 @@ for creative problem-solving and lateral thinking.
 """
 
 from typing import Optional, Dict, Any, Union
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from .strategies_core import StrategiesManager
 
 # Initialize the MCP server
-mcp = FastMCP("Oblique Strategies")
+mcp = MCPServer("Oblique Strategies")
 
 # Initialize the strategies manager
 manager = StrategiesManager()

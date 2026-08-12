@@ -2,3 +2,8 @@
 .coverage
 __pycache__
 .*_cache/
+build/
+dist/
+*.egg-info/
+.venv/
+
